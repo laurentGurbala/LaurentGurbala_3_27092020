@@ -1,0 +1,16 @@
+.footer {
+    background: #353535;
+    color: white;
+    font-size: 1.2em;
+    padding: 2em;
+    line-height: 1.5em;
+    &__heading {
+        font-family: "Shrikhand", sans-serif;
+        text-align: left;
+        margin-bottom: 1em;
+    }
+
+    & li {
+        text-align: left;
+    }
+}
