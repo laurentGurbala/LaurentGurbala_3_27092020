@@ -1,0 +1,23 @@
+.btn-rose {
+    width: auto;
+    padding: 1em 1.5em;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: white;
+    border-radius: 10% / 50%;
+    border: 0px;
+    background: linear-gradient(to top left, $couleur-primaire, $couleur-secondaire);
+    @include btn-shadow;
+}
+
+.btn {
+    width: 90%;
+    padding: 1.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5% / 30%;
+    background-color: #f6f6f6;
+    border: 0px;
+    margin-bottom: 2em;
+    @include btn-shadow;
+}

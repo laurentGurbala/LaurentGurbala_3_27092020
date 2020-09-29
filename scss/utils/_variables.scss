@@ -1,0 +1,9 @@
+$couleur-primaire: #9356dc;
+$couleur-secondaire: #ff79da;
+$couleur-tertiaire: #99e2d0;
+
+$couleur-bg: #f6f6f6; 
+
+@mixin btn-shadow {
+    box-shadow:#e1e1e1 0px 5px 7px 3px;
+}

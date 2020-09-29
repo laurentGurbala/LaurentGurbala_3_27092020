@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 3em;
+}
+
+h2 {
+  font-family: "Roboto", cursive;
+  font-size: 2.2em;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+input {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: black;
+  font-size: 1.4em;
+}
+input::placeholder {
+  color: black;
+  font-family: "Robot", sans-serif;
+}
+
+.input {
+  background-color: #eaeaea;
+  border-style: none;
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.btn-rose {
+  width: auto;
+  padding: 1em 1.5em;
+  font-weight: bold;
+  font-size: 1.3em;
+  color: white;
+  border-radius: 10%/50%;
+  border: 0px;
+  background: linear-gradient(to top left, #9356dc, #ff79da);
+  box-shadow: #e1e1e1 0px 5px 7px 3px;
+}
+
+.btn {
+  width: 90%;
+  padding: 1.5em;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 5%/30%;
+  background-color: #f6f6f6;
+  border: 0px;
+  margin-bottom: 2em;
+  box-shadow: #e1e1e1 0px 5px 7px 3px;
+}
+
+.header {
+  padding: 1em;
+}
+.header__logo {
+  text-align: center;
+}
+
+.localisation {
+  background-color: #f6f6f6;
+  padding-bottom: 3em;
+  margin-bottom: 2em;
+}
+
+.explorer__heading {
+  margin-bottom: 1em;
+}
+.explorer__description {
+  font-size: 1.4em;
+  margin-bottom: 1em;
+}
+
+.fonctionnement__heading {
+  text-align: left;
+  padding: 1em;
+}
+
+/*# sourceMappingURL=style.css.map */

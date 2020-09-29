@@ -1,0 +1,22 @@
+.localisation {
+    background-color: $couleur-bg;
+    padding-bottom: 3em;
+    margin-bottom: 2em;
+}
+
+.explorer {
+    &__heading{
+        margin-bottom: 1em;
+    }
+    &__description {
+        font-size: 1.4em;
+        margin-bottom: 1em;
+    }
+}
+
+.fonctionnement {
+    &__heading{
+        text-align: left;
+        padding: 1em;
+    }
+}
