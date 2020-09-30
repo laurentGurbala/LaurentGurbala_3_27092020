@@ -20,13 +20,15 @@ p {
     font-weight: 300;
 }
 
-input {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    color: black;
-    font-size: 1.2em;
-    &::placeholder{
-        color: black;
-        font-family: "Robot", sans-serif;
-    }
-}
+// Cancel l'input pour un simple p 
+// -cause n'arrive pas à mettre le logo dans le placeholder-
+// input {
+//     font-family: 'Roboto', sans-serif;
+//     font-weight: 700;
+//     color: black;
+//     font-size: 1.2em;
+//     &::placeholder{
+//         color: black;
+//         font-family: "Robot", sans-serif;
+//     }
+// }

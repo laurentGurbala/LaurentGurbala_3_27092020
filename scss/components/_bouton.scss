@@ -10,13 +10,32 @@
 }
 
 .btn {
-    width: 90%;
+    text-align: left;
+    width: 80%;
     padding: 1.5em;
-    font-size: 1.2em;
     font-weight: bold;
     border-radius: 5% / 30%;
     background-color: #f6f6f6;
     border: 0px;
     margin-bottom: 2em;
+    position: relative;
     @include btn-shadow;
+    &__list {
+        position: absolute;
+        left: -15px;
+        padding: 0.5em;
+        border-radius: 50%;
+        font-size: 1.2em;
+        line-height: 0.7em;
+        background-color: $couleur-primaire;
+        color: white;
+    }
+    & i {
+        padding: 0 1em;
+        color: gray;
+    }
+}
+
+.btn-coeur {
+
 }
