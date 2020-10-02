@@ -1,9 +1,50 @@
+// Variables
+
 $couleur-primaire: #9356dc;
 $couleur-secondaire: #ff79da;
 $couleur-tertiaire: #99e2d0;
 
 $couleur-bg: #f6f6f6; 
 
+// Listes - Maps
+$breakpoints: (
+    mobile: 450px,
+    tablet: 768px,
+    // laptop: 1024px,
+    laptop: 1080px,
+    desktop: 1440px
+);
+
+// Mixins
+
+@mixin section-padding {
+    padding: 4em 0 4em 1em;
+}
+
 @mixin btn-shadow {
-    box-shadow:#e1e1e1 0px 5px 7px 3px;
+    box-shadow:#d3d3d3 0px 5px 7px 3px;
+}
+
+@mixin mobile {
+    @media screen and (max-width: map-get($breakpoints, mobile)){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: map-get($breakpoints, laptop)) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (max-width: map-get($breakpoints, desktop)){
+        @content;
+    }
 }

@@ -1,98 +1,163 @@
 .localisation {
     background-color: $couleur-bg;
-    padding-bottom: 3em;
-    margin-bottom: 2em;
+    text-align: center;
     &__ville {
-        background-color: #eaeaea;
-        border-style: none; 
-        text-align: center;
-        padding: 1em;
-        margin-bottom: 2em;
-        display: flex;
-        justify-content: center;
-        
-        & i {
-            margin-right: 1em;
+        background-color: #d9d9d9;
+        padding: 1.5em;
+        @include tablet(){
+            padding: 1em;
         }
+    }
+    & i {
+        margin-right: 1em;
+        @include tablet(){
+            font-size: 1em;
+        }
+    }
+    & input {
+        border: none;
+        background: none;
+        font-size: 1.5em;
+        width: 250px;
 
-        & p {
-            font-weight: bold;
-            font-weight: 1.2em;
+        @include tablet {
+            font-size: 1em;
+            // text-align: center;
+            width: 150px;
+        }
+        &::placeholder {
+            color: black;
+        }
+        
+        &:focus {
+            &::placeholder{    
+                color: transparent;
+            }
         }
     }
 }
 
 .explorer {
-    &__heading{
-        margin-bottom: 1em;
+    padding: 5em 0;
+    @include tablet(){
+        padding: 3em 0;
+        
     }
-    &__description {
-        font-size: 1em;
-        margin-bottom: 1em;
+    &__heading {
+        padding-bottom: 0.3em;
+        @include tablet(){
+            font-size: 2em;
+        }
+        @include mobile(){
+            font-size: 1.2em;
+            padding-bottom: 1em;
+        }
+    }
+    & p {
+        font-size: 2em;
+        line-height: 1.8em;
+        padding-bottom: 2em;
+        @include tablet(){
+            font-size: 1.5em;
+            line-height: 1.2em;
+        }
+
+        @include mobile(){
+            font-size: 1em;
+        }
     }
 }
 
-.fonctionnement {
-    margin-bottom: 2em;
+.fonction {
+    @include section-padding();
     &__heading{
-        text-align: left;
-        padding: 0.5em 0 1em 1em;
+        @include tablet(){
+            font-size: 2em;
+        }
     }
+}
+
+.lst-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .restaurant {
     background-color: $couleur-bg;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    @include section-padding();
     &__heading {
-        text-align: left;
-        padding-left: 1em;
+        padding-bottom: 1em;
+        @include tablet(){
+            font-size: 2em;
+            padding-bottom: 0.5em;
+        }
     }
 }
 
+.lst-carte {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .carte {
-    width: 90%;
-    margin: 1em auto;
-    border-radius: 10%;
-    @include btn-shadow;
+    width: 500px;
     overflow: hidden;
+    background-color: white;
+    margin: 1em;
+    border-radius: 10%;
+    @include btn-shadow();
     position: relative;
+    
+    @include laptop {
+        width: 400px;
+    }
 
-    &__image {
+    @include mobile(){
+        width: 300px;
+    }
+
+    &__nom {
+        padding: 1em;
+        
+        & h3 {
+            @include mobile(){
+                font-size: 1.2em;
+            }
+        }
+
+        & p {
+            @include mobile(){
+                font-size: 1em;
+            }
+        }
+    }
+
+    & img{
         width: 100%;
-        overflow: hidden;
-    }
+        height: 250px;
+        object-fit: cover;
 
-    & img {
-        // Adapte automatiquement la taille de l'image
-        max-width: 100%;
-        z-index: -1;
-    }
+        @include mobile(){
+            height: auto;
+        }
 
-    &__nouveau {
+    }
+    & .btn-coeur {
         position: absolute;
-        z-index: 1;
-        top: 5%;
-        right: 5%;
-        font-size: 0.8em;
-        font-weight: bold;
-        padding: 0.5em 1em;
-        background: $couleur-tertiaire;
-        color: darken($color: $couleur-tertiaire, $amount: 35%);
+        bottom: 10%;
+        right: 10%;
     }
+}
 
-    &__description {
-        padding: 1em 1.5em 1em 1em;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &__heading {
-        text-align: left;
-
-    }
-    & p {
-        text-align: left;
-    }
+.nouveau {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    background: $couleur-tertiaire;
+    color: darken($color: $couleur-tertiaire, $amount: 35%);
 }

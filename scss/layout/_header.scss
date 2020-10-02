@@ -1,7 +1,25 @@
 .header {
-    padding: 1em;
-    position: relative;
-    &__logo {
-        text-align: center;
+    text-align: center;
+    @include section-padding();
+    
+    @include desktop(){
+
+    }
+
+    @include tablet(){
+        padding: 1em;
+    }
+
+    @include mobile(){
+
+    }
+
+    &__heading {
+        @include tablet(){
+            font-size: 4em;
+        }
+        @include mobile(){
+            font-size: 2em;
+        }
     }
 }

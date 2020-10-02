@@ -12,6 +12,11 @@ ul {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 h1 {
   font-family: "Shrikhand", cursive;
   font-size: 5em;
@@ -34,11 +39,6 @@ p {
   font-size: 1.5em;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
 .btn-rose {
   padding: 1em 2em;
   font-size: 1.5em;
@@ -47,6 +47,11 @@ a {
   border: none;
   background: linear-gradient(to top left, #9356dc, #ff79da);
   box-shadow: #d3d3d3 0px 5px 7px 3px;
+}
+@media screen and (max-width: 450px) {
+  .btn-rose {
+    font-size: 1em;
+  }
 }
 
 .btn {
@@ -103,25 +108,15 @@ a {
   border: none;
 }
 
-.content {
-  width: 100%;
-  max-width: 1800px;
-  margin: auto;
-}
-@media screen and (max-width: 1440px) {
-  .content {
-    max-width: 1140px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .content {
-    max-width: 720px;
-  }
-}
-@media screen and (max-width: 450px) {
-  .content {
-    width: 90%;
-  }
+.btn-retour {
+  margin-left: 1em;
+  font-size: 1em;
+  color: black;
+  background: none;
+  border: none;
+  position: absolute;
+  left: 0;
+  top: 29px;
 }
 
 .header {
@@ -183,6 +178,21 @@ a {
   color: white;
 }
 
+.content {
+  width: 100%;
+  max-width: 1800px;
+  margin: auto;
+}
+@media screen and (max-width: 1440px) {
+  .content {
+    max-width: 1140px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .content {
+    max-width: 720px;
+  }
+}
 .localisation {
   background-color: #f6f6f6;
   text-align: center;
@@ -239,6 +249,12 @@ a {
     font-size: 2em;
   }
 }
+@media screen and (max-width: 450px) {
+  .explorer__heading {
+    font-size: 1.2em;
+    padding-bottom: 1em;
+  }
+}
 .explorer p {
   font-size: 2em;
   line-height: 1.8em;
@@ -248,6 +264,11 @@ a {
   .explorer p {
     font-size: 1.5em;
     line-height: 1.2em;
+  }
+}
+@media screen and (max-width: 450px) {
+  .explorer p {
+    font-size: 1em;
   }
 }
 

@@ -1,0 +1,16 @@
+.content {
+    width: 100%;
+    max-width: 1800px;
+    margin: auto;
+    @include desktop(){
+        max-width: 1140px;
+    }
+    @include tablet(){
+        max-width: 720px;
+    }
+
+    @include mobile(){
+        // width: 90%;
+    }
+
+}

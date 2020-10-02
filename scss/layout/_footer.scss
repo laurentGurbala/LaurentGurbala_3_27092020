@@ -1,21 +1,37 @@
 .footer {
     background: #353535;
     color: white;
-    font-size: 1.2em;
-    padding: 2em;
-    line-height: 1.5em;
+    text-align: center;
+    @include section-padding();
+    line-height: 3em;
+    
+    @include tablet(){
+        text-align: left;
+    }
+
     &__heading {
         font-family: "Shrikhand", sans-serif;
-        text-align: left;
-        margin-bottom: 1em;
+        font-size: 3em;
+        @include tablet(){
+            font-size: 2em;
+            padding-left: 3vw;
+        }
     }
 
     & li {
-        text-align: left;
+        font-size: 2em;
+        @include tablet(){
+            font-size: 1.2em;
+            padding-left: 3vw;
+        }
     }
 
     & i {
 
         margin-right: 0.5em;
+        font-size: 1.2em;
+    }
+    & a {
+        color: white;
     }
 }

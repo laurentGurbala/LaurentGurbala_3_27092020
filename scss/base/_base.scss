@@ -1,11 +1,22 @@
+// Reset marge
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0; 
+    padding:0;
     box-sizing: border-box;
-    text-align: center;
 }
 
+// Police par défaut
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+//  UL par défaut
 ul {
     list-style-type: none;
 }
 
+// Lien par défaut
+a {
+    text-decoration: none;
+    color: black;
+}

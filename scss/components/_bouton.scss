@@ -1,43 +1,68 @@
 .btn-rose {
-    width: auto;
-    padding: 1em;
-    font-size: 1em;
+    padding: 1em 2em;
+    font-size: 1.5em;
     color: white;
-    border: 0px;
     border-radius: 10% / 50%;
+    border: none;
     background: linear-gradient(to top left, $couleur-primaire, $couleur-secondaire);
-    @include btn-shadow;
+    @include btn-shadow();
+
+    @include mobile(){
+        font-size: 1em;
+    }
 }
 
 .btn {
-    text-align: left;
+    display: block;
     width: 80%;
-    padding: 1.5em;
+    max-width: 500px;
+    text-align: left;
+    font-size: 1.5em;
+    font-family: inherit;
     font-weight: bold;
+    padding: 1.5em;
+    margin: 1em;
     border-radius: 5% / 30%;
+    border: none;
     background-color: #f6f6f6;
-    border: 0px;
-    margin-bottom: 2em;
+    @include btn-shadow();
     position: relative;
-    @include btn-shadow;
+    
+    @include tablet(){
+        font-size: 1.2em;
+    }
+
+    @include mobile(){
+        width: 270px;
+        font-size: 1em;
+    }
+
     &__list {
         position: absolute;
-        left: -15px;
+        left: -20px;
         padding: 0.5em;
         border-radius: 50%;
-        font-size: 1.2em;
         line-height: 0.7em;
+        font-weight: normal;
         background-color: $couleur-primaire;
         color: white;
+
     }
-    & i {
-        padding: 0 1em;
+
+    & i{
+        padding-left: 0.5em;
+        padding-right: 1em;
         color: gray;
+        @include mobile {
+            font-size: 1em;
+            text-align: left;
+        }
     }
 }
 
 .btn-coeur {
-
+    background: none;
+    border: none;
 }
 
 .btn-retour {
