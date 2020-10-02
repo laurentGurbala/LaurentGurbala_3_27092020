@@ -32,7 +32,7 @@ ul {
 // typographie
 h1 {
     font-family: "Shrikhand", cursive;
-    font-size: 4em;
+    font-size: 5em;
 }
 
 h2 {
@@ -67,8 +67,11 @@ $couleur-tertiaire: #99e2d0;
 // liste / map
 
 $breakpoints: (
-    mobile: 599px,
-    tablet: 1023px,
+    mobile: 450px,
+    tablet: 768px,
+    // laptop: 1024px,
+    laptop: 1080px,
+    desktop: 1440px
 );
 
 // mixin
@@ -82,11 +85,28 @@ $breakpoints: (
 }
 
 @mixin mobile {
-    @media screen and (max-width: map-get($map: $breakpoints, $key: mobile)){
+    @media screen and (max-width: map-get($breakpoints, mobile)){
         @content;
     }
 }
 
+@mixin tablet {
+    @media screen and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: map-get($breakpoints, laptop)) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (max-width: map-get($breakpoints, desktop)){
+        @content;
+    }
+}
 // COMPONENT
 
 // btn
@@ -102,11 +122,13 @@ $breakpoints: (
 
 .btn {
     display: block;
-    width: 420px;
+    width: 80%;
+    max-width: 500px;
+    text-align: left;
     font-size: 1.5em;
     font-family: inherit;
     font-weight: bold;
-    padding: 1em 0em;
+    padding: 1.5em;
     margin: 1em;
     border-radius: 5% / 30%;
     border: none;
@@ -114,6 +136,15 @@ $breakpoints: (
     @include btn-shadow();
     position: relative;
     
+    @include tablet(){
+        font-size: 1.2em;
+    }
+
+    @include mobile(){
+        width: 270px;
+        font-size: 1em;
+    }
+
     &__list {
         position: absolute;
         left: -20px;
@@ -125,6 +156,16 @@ $breakpoints: (
         color: white;
 
     }
+
+    & i{
+        padding-left: 0.5em;
+        padding-right: 1em;
+        color: gray;
+        @include mobile {
+            font-size: 1em;
+            text-align: left;
+        }
+    }
 }
 
 .btn-coeur {
@@ -135,30 +176,74 @@ $breakpoints: (
 
 // content
 .content {
-    width: 1200px;
+    width: 100%;
+    max-width: 1800px;
     margin: auto;
+    @include desktop(){
+        max-width: 1140px;
+    }
+    @include tablet(){
+        max-width: 720px;
+    }
+
+    @include mobile(){
+        width: 90%;
+    }
+
 }
 // header
 .header {
     text-align: center;
     @include section-padding();
+    
+    @include desktop(){
+
+    }
+
+    @include tablet(){
+        padding: 1em;
+    }
+
+    @include mobile(){
+
+    }
+
+    &__heading {
+        @include tablet(){
+            font-size: 4em;
+        }
+        @include mobile(){
+            font-size: 2em;
+        }
+    }
 }
 
 .footer {
     background: #353535;
     color: white;
-    font-size: 1.2em;
+    text-align: center;
     @include section-padding();
-    line-height: 2em;
+    line-height: 3em;
+    
+    @include tablet(){
+        text-align: left;
+    }
+
     &__heading {
         font-family: "Shrikhand", sans-serif;
-        text-align: left;
-        font-size: 2em;
-        padding-bottom: 1em;
+        font-size: 3em;
+        @include tablet(){
+            font-size: 2em;
+            padding-left: 3vw;
+        }
     }
 
     & li {
-        text-align: left;
+        font-size: 2em;
+        @include tablet(){
+            font-size: 1.2em;
+            padding-left: 3vw;
+        }
     }
 
     & i {
@@ -179,9 +264,15 @@ $breakpoints: (
     &__ville {
         background-color: #d9d9d9;
         padding: 1.5em;
+        @include tablet(){
+            padding: 1em;
+        }
     }
     & i {
         margin-right: 1em;
+        @include tablet(){
+            font-size: 1em;
+        }
     }
     & input {
         border: none;
@@ -189,6 +280,11 @@ $breakpoints: (
         font-size: 1.5em;
         width: 250px;
 
+        @include tablet {
+            font-size: 1em;
+            // text-align: center;
+            width: 150px;
+        }
         &::placeholder {
             color: black;
         }
@@ -203,14 +299,34 @@ $breakpoints: (
 
 .explorer {
     padding: 5em 0;
+    @include tablet(){
+        padding: 3em 0;
+        
+    }
+    &__heading {
+        padding-bottom: 0.3em;
+        @include tablet(){
+            font-size: 2em;
+        }
+    }
     & p {
         font-size: 2em;
         line-height: 1.8em;
+        padding-bottom: 2em;
+        @include tablet(){
+            font-size: 1.5em;
+            line-height: 1.2em;
+        }
     }
 }
 
 .fonction {
     @include section-padding();
+    &__heading{
+        @include tablet(){
+            font-size: 2em;
+        }
+    }
 }
 
 .lst-btn {
@@ -224,12 +340,16 @@ $breakpoints: (
     @include section-padding();
     &__heading {
         padding-bottom: 1em;
+        @include tablet(){
+            font-size: 2em;
+            padding-bottom: 0.5em;
+        }
     }
 }
 
 .lst-carte {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -242,13 +362,38 @@ $breakpoints: (
     @include btn-shadow();
     position: relative;
     
+    @include laptop {
+        width: 400px;
+    }
+
+    @include mobile(){
+        width: 300px;
+    }
+
     &__nom {
         padding: 1em;
+        
+        & h3 {
+            @include mobile(){
+                font-size: 1.2em;
+            }
+        }
+
+        & p {
+            @include mobile(){
+                font-size: 1em;
+            }
+        }
     }
+
     & img{
         width: 100%;
         height: 250px;
-        
+        object-fit: cover;
+
+        @include mobile(){
+            height: auto;
+        }
 
     }
     & .btn-coeur {
