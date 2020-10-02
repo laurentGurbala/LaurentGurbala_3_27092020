@@ -1,13 +1,271 @@
-// utils
-@import "./utils/variables";
-// base
-@import "./base/base";
-@import "./base/typographie";
-// composant
-@import "./components/input";
-@import "./components/bouton";
-// layout
-@import "./layout/header";
-@import "./layout/footer";
-// page
-@import "./pages/acceuil";
+// // utils
+// @import "./utils/variables";
+// // base
+// @import "./base/base";
+// @import "./base/typographie";
+// // composant
+// @import "./components/input";
+// @import "./components/bouton";
+// // layout
+// @import "./layout/header";
+// @import "./layout/footer";
+// @import "./layout/banner";
+// @import "./layout/carte-detail";
+// // page
+// @import "./pages/acceuil";
+// @import "./pages/a-la-francaise";
+
+// Base
+* {
+    margin: 0; 
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+// typographie
+h1 {
+    font-family: "Shrikhand", cursive;
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+i {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+// variables
+$couleur-bg: #f6f6f6;
+
+$couleur-primaire: #9356dc;
+$couleur-secondaire: #ff79da;
+$couleur-tertiaire: #99e2d0;
+
+// liste / map
+
+$breakpoints: (
+    mobile: 599px,
+    tablet: 1023px,
+);
+
+// mixin
+
+@mixin section-padding {
+    padding: 4em 0 4em 1em;
+}
+
+@mixin btn-shadow {
+    box-shadow:#d3d3d3 0px 5px 7px 3px;
+}
+
+@mixin mobile {
+    @media screen and (max-width: map-get($map: $breakpoints, $key: mobile)){
+        @content;
+    }
+}
+
+// COMPONENT
+
+// btn
+.btn-rose {
+    padding: 1em 2em;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 10% / 50%;
+    border: none;
+    background: linear-gradient(to top left, $couleur-primaire, $couleur-secondaire);
+    @include btn-shadow();
+}
+
+.btn {
+    display: block;
+    width: 420px;
+    font-size: 1.5em;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 1em 0em;
+    margin: 1em;
+    border-radius: 5% / 30%;
+    border: none;
+    background-color: #f6f6f6;
+    @include btn-shadow();
+    position: relative;
+    
+    &__list {
+        position: absolute;
+        left: -20px;
+        padding: 0.5em;
+        border-radius: 50%;
+        line-height: 0.7em;
+        font-weight: normal;
+        background-color: $couleur-primaire;
+        color: white;
+
+    }
+}
+
+.btn-coeur {
+    background: none;
+    border: none;
+}
+// LAYOUT
+
+// content
+.content {
+    width: 1200px;
+    margin: auto;
+}
+// header
+.header {
+    text-align: center;
+    @include section-padding();
+}
+
+.footer {
+    background: #353535;
+    color: white;
+    font-size: 1.2em;
+    @include section-padding();
+    line-height: 2em;
+    &__heading {
+        font-family: "Shrikhand", sans-serif;
+        text-align: left;
+        font-size: 2em;
+        padding-bottom: 1em;
+    }
+
+    & li {
+        text-align: left;
+    }
+
+    & i {
+
+        margin-right: 0.5em;
+        font-size: 1.2em;
+    }
+    & a {
+        color: white;
+    }
+}
+// PAGE
+
+// accueil
+.localisation {
+    background-color: $couleur-bg;
+    text-align: center;
+    &__ville {
+        background-color: #d9d9d9;
+        padding: 1.5em;
+    }
+    & i {
+        margin-right: 1em;
+    }
+    & input {
+        border: none;
+        background: none;
+        font-size: 1.5em;
+        width: 250px;
+
+        &::placeholder {
+            color: black;
+        }
+        
+        &:focus {
+            &::placeholder{    
+                color: transparent;
+            }
+        }
+    }
+}
+
+.explorer {
+    padding: 5em 0;
+    & p {
+        font-size: 2em;
+        line-height: 1.8em;
+    }
+}
+
+.fonction {
+    @include section-padding();
+}
+
+.lst-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restaurant {
+    background-color: $couleur-bg;
+    @include section-padding();
+    &__heading {
+        padding-bottom: 1em;
+    }
+}
+
+.lst-carte {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.carte {
+    width: 500px;
+    overflow: hidden;
+    background-color: white;
+    margin: 1em;
+    border-radius: 10%;
+    @include btn-shadow();
+    position: relative;
+    
+    &__nom {
+        padding: 1em;
+    }
+    & img{
+        width: 100%;
+        height: 250px;
+        
+
+    }
+    & .btn-coeur {
+        position: absolute;
+        bottom: 10%;
+        right: 10%;
+    }
+}
+
+.nouveau {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    background: $couleur-tertiaire;
+    color: darken($color: $couleur-tertiaire, $amount: 35%);
+}
+
