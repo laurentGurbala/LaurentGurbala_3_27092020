@@ -60,6 +60,49 @@
     }
 }
 
+.btn-menu {
+    width: 90%;
+    max-width: 500px;
+    padding: 2em;
+    margin: 1em;
+    text-align: left;
+    font-weight: bold;
+    border-radius: 5% / 30%;
+    border: none;
+    background-color: #f6f6f6;
+    @include btn-shadow;
+
+    @include mobile{
+        padding: 1em;
+    }
+    &__plat{
+        font-size: 2em;
+        margin-bottom: 0.2em;
+        @include mobile{
+            font-size: 1.1em;
+        }
+    }
+    &__sous-detail{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__detail {
+        font-size: 1.5em;
+        font-weight: normal;
+        @include mobile{
+            font-size: 1em;
+        }
+    }
+
+    &__prix {
+        font-size: 1.5em;
+        @include mobile{
+            font-size: 1em;
+        }
+    }
+}
+
 .btn-coeur {
     background: none;
     border: none;
