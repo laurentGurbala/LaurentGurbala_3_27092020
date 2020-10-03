@@ -240,12 +240,12 @@ p {
 }
 @media screen and (max-width: 768px) {
   .menu-nom {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 }
 @media screen and (max-width: 500px) {
   .menu-nom {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 }
 

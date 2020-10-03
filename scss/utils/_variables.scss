@@ -59,13 +59,15 @@ $breakpoints: (
     font-family: "Shrikhand", cursive;
 
     @include tablet(){
-        font-size: 2em;
+        font-size: 1.8em;
     }
     @include mobile(){
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 }
 
+// Titre Différentes étapes du menu
+// Entrée / Plats / Desserts
 @mixin title-menu {
     font-weight: normal;
     text-transform: uppercase;
