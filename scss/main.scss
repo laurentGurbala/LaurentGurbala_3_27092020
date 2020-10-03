@@ -6,15 +6,14 @@
 @import "./base/typographie";
 
 // composant
-// @import "./components/input";
 @import "./components/bouton";
 
 // layout
 @import "./layout/header";
 @import "./layout/footer";
 @import "./layout/content";
-// @import "./layout/banner";
-// @import "./layout/carte-detail";
+@import "./layout/banner";
+@import "./layout/menu";
 
 // page
 @import "./pages/acceuil";

@@ -8,7 +8,7 @@ $couleur-bg: #f6f6f6;
 
 // Listes - Maps
 $breakpoints: (
-    mobile: 450px,
+    mobile: 500px,
     tablet: 768px,
     // laptop: 1024px,
     laptop: 1080px,
@@ -17,13 +17,7 @@ $breakpoints: (
 
 // Mixins
 
-@mixin section-padding {
-    padding: 4em 0 4em 1em;
-}
-
-@mixin btn-shadow {
-    box-shadow:#d3d3d3 0px 5px 7px 3px;
-}
+// MEDIA QUERIES
 
 @mixin mobile {
     @media screen and (max-width: map-get($breakpoints, mobile)){
@@ -46,5 +40,51 @@ $breakpoints: (
 @mixin desktop {
     @media screen and (max-width: map-get($breakpoints, desktop)){
         @content;
+    }
+}
+
+// AUTRES
+@mixin section-padding {
+    padding: 4em 0 4em 1em;
+}
+
+@mixin btn-shadow {
+    box-shadow:#d3d3d3 0px 5px 7px 3px;
+}
+
+// Règles du nom du restaurant 
+// sur la page détails du menu
+@mixin nom-restaurant-menu {
+    font-size: 3em;
+    font-family: "Shrikhand", cursive;
+
+    @include tablet(){
+        font-size: 2em;
+    }
+    @include mobile(){
+        font-size: 1.5em;
+    }
+}
+
+@mixin title-menu {
+    font-weight: normal;
+    text-transform: uppercase;
+
+    @include mobile(){
+        font-size: 1em;
+    }
+
+    &::after{
+        content: "";
+        display: block;
+        width: 5%;
+        border-top: solid 4px $couleur-tertiaire;
+
+        @include tablet(){
+            width: 8%;
+        }
+        @include mobile(){
+            width: 10%;
+        }
     }
 }
