@@ -10,55 +10,76 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="../public/style.css">
-    <title>À la française</title>
+    <title>Oh my food - À la française</title>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <h1 class="header__logo">
-            ohmyfood
-        </h1>
-        <a href="../index.html" class="btn-retour">
-            <i class="fas fa-arrow-left"></i>
-        </a>
-    </header>
+    <!-- CONTENT -->
+    <div class="content">
 
-    <div class="banner">
-        <img src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="a la francaise">
-    </div>
-    <!-- Détails de la carte -->
-    <section class="carte-detail">
-        <div class="carte-detail--bg">
-            <div class="carte-detail__heading">
-                <h2>A la française</h2>
-                <i class="far fa-heart btn-coeur"></i>
-            </div>
-            
-            <!-- Entrée -->
-            <section class="commande">
-                <h3 class="commande__heading">
-                    entrées
-                </h3>
-                
-                <button class="btn">
-                    Tartare de poulpe acidulé
-                    <div class="btn__description">
-                        <p class="description__details">Aux zests d'orange</p>
-                        <p class="description__prix">25€</p>
-                    </div>
-                </button>
-            </section>
-            
-            <!-- Plats -->
-            
-            <!-- Desserts -->
+        <!-- HEADER -->
+        <header class="header">
+            <h1 class="header__heading">ohmyfood</h1>
+            <a class="btn-retour" href="../index.html">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </header>
+
+        <!-- BANNER -->
+        <div class="banner">
+            <img class="banner__image" src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.png" alt="à la française">
         </div>
+        
+        <!-- MENU -->
+        <section class="menu">
+            <!-- Heading -->
+            <div class="menu__heading">
+                <h2 class="menu-nom">À la française</h2>
+                <button class="btn-coeur">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+            <!-- Entrées -->
+            <div class="menu-etape">
+                <h3 class="menu-etape__heading">entrées</h3>
+                <div class="lst-btn">
+                    <button class="btn">Test</button>
+                    <button class="btn">Test</button>
+                    <button class="btn">Test</button>
+                </div>
+            </div>
+            <!-- Plats -->
+            <div class="menu-etape">
+                <h3 class="menu-etape__heading">plats</h3>
+                <div class="lst-btn">
+                    <button class="btn">Test</button>
+                    <button class="btn">Test</button>
+                    <button class="btn">Test</button>
+                </div>
+            </div>
+            <!-- Desserts -->
+            <div class="menu-etape">
+                <h3 class="menu-etape__heading">desserts</h3>
+                <div class="lst-btn">
+                    <button class="btn">Test</button>
+                    <button class="btn">Test</button>
+                    <button class="btn">Test</button>
+                </div>
+            </div>
+            <!-- Commander -->
             
-    </section>
-    
+        </section>
 
-    <!-- Footer -->
-
+        <!-- FOOTER -->
+        <footer class="footer">
+            <h2 class="footer__heading">ohmyfood</h2>
+            <ul>
+                <li><i class="fas fa-utensils"></i> Proposer un restaurant</li>
+                <li><i class="fas fa-handshake"></i> Devenir partenaire</li>
+                <li>Mentions légales</li>
+                <li> <a href="mailto:contact@ohmyfood.com">Contact</a> </li>
+            </ul>
+        </footer>
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,34 @@
+.menu {
+    background-color: white;
+    position: relative;
+    top: -130px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    padding-top: 2em;
+    padding-left: 2em;
+
+    &__heading {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+        & .btn-coeur {
+            margin-right: 3em;
+            font-size: 1.5em;
+
+            @include mobile {
+                font-size: 1em;
+            }
+        }
+    }
+}
+
+.menu-nom {
+    @include nom-restaurant-menu;
+}
+
+.menu-etape {
+
+    &__heading{
+        @include title-menu;
+    }
+}
