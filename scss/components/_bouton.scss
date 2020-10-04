@@ -5,7 +5,10 @@
     border-radius: 10% / 50%;
     border: none;
     background: linear-gradient(to top left, $couleur-primaire, $couleur-secondaire);
+    position: relative;
     @include btn-shadow();
+
+    @include transition-btn(white);
 
     @include mobile(){
         font-size: 1em;
@@ -27,7 +30,9 @@
     background-color: #f6f6f6;
     @include btn-shadow();
     position: relative;
-    
+    // Transition
+    @include transition-btn;
+    // Fin transition
     @include tablet(){
         font-size: 1.2em;
     }
@@ -46,9 +51,7 @@
         font-weight: normal;
         background-color: $couleur-primaire;
         color: white;
-
     }
-
     & i{
         padding-left: 0.5em;
         padding-right: 1em;
