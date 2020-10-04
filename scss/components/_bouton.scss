@@ -6,6 +6,7 @@
     border: none;
     background: linear-gradient(to top left, $couleur-primaire, $couleur-secondaire);
     position: relative;
+    outline: none;
     @include btn-shadow();
 
     @include transition-btn(white);
@@ -28,6 +29,7 @@
     border-radius: 5% / 30%;
     border: none;
     background-color: #f6f6f6;
+    outline: none;
     @include btn-shadow();
     position: relative;
     // Transition

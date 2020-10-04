@@ -47,6 +47,7 @@ p {
   border: none;
   background: linear-gradient(to top left, #9356dc, #ff79da);
   position: relative;
+  outline: none;
   box-shadow: #d3d3d3 0px 5px 7px 3px;
   transition: box-shadow 0.5s;
 }
@@ -88,6 +89,7 @@ p {
   border-radius: 5%/30%;
   border: none;
   background-color: #f6f6f6;
+  outline: none;
   box-shadow: #d3d3d3 0px 5px 7px 3px;
   position: relative;
   transition: box-shadow 0.5s;
@@ -220,6 +222,24 @@ p {
   }
 }
 
+.loader {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #9356dc;
+  margin: 500px auto;
+  position: absolute;
+  left: 50%;
+}
+
+@keyframes contenu {
+  0% {
+    transform: translateX(-9999px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .header {
   text-align: center;
   position: relative;
@@ -284,6 +304,11 @@ p {
   width: 100%;
   max-width: 1500px;
   margin: auto;
+}
+.content--anim {
+  animation: contenu 1s 2s;
+  animation-fill-mode: backwards;
+  position: relative;
 }
 @media screen and (max-width: 1440px) {
   .content {
@@ -536,6 +561,12 @@ p {
   padding: 0.5em 1em;
   background: #99e2d0;
   color: #2c9c81;
+}
+
+.btn-commander {
+  display: flex;
+  justify-content: center;
+  margin: 2em;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,19 @@
+.loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: $couleur-primaire;
+    margin: 500px auto;
+    position: absolute;
+    left: 50%;
+}
+
+@keyframes contenu {
+    0% {
+        transform: translateX(-9999px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

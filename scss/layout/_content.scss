@@ -2,6 +2,12 @@
     width: 100%;
     max-width: 1500px;
     margin: auto;
+    &--anim{
+
+        animation: contenu 01s $contenu-delay;
+        animation-fill-mode: backwards;
+        position: relative;
+    }
     @include desktop(){
         max-width: 1140px;
     }
