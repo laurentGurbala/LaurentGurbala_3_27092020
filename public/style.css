@@ -223,13 +223,16 @@ p {
 }
 
 .loader {
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 300px;
+  border: 1em solid #9356dc;
+  border-top: 1em solid #ff79da;
   border-radius: 50%;
-  background-color: #9356dc;
-  margin: 500px auto;
   position: absolute;
-  left: 50%;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  animation: loader 1s linear;
+  animation-iteration-count: 4;
 }
 
 @keyframes contenu {
@@ -238,6 +241,11 @@ p {
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
   }
 }
 .header {
@@ -304,6 +312,7 @@ p {
   width: 100%;
   max-width: 1500px;
   margin: auto;
+  background: white;
 }
 .content--anim {
   animation: contenu 1s 2s;
