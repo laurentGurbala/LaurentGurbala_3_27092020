@@ -110,9 +110,35 @@
 }
 
 .btn-coeur {
-    background: none;
+    width: 30px;
+    height: 30px;
     border: none;
+    background: none;
+    outline: none;
+    & .coeur{
+        fill: transparent;
+        stroke-width: 10px;
+        stroke: black;
+        &:hover{
+            fill: url(#grad);
+            stroke: url(#grad);
+            cursor: pointer;
+        }
+    }
+
+    @include tablet{
+        width: 15px;
+        height: 15px;
+    }
 }
+
+// .coeur {
+//     width: 15px;
+//     height: 15px;
+//     fill: transparent;
+//     stroke-width: 4px;
+//     stroke: black;
+// }
 
 .btn-retour {
     margin-left: 1em;

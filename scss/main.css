@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -43,21 +44,30 @@ p {
   padding: 1em 2em;
   font-size: 1.5em;
   color: white;
-  border-radius: 10%/50%;
+  border-radius: 10% / 50%;
   border: none;
+  background: -webkit-gradient(linear, right bottom, left top, from(#9356dc), to(#ff79da));
   background: linear-gradient(to top left, #9356dc, #ff79da);
   position: relative;
   outline: none;
-  box-shadow: #d3d3d3 0px 5px 7px 3px;
+  -webkit-box-shadow: #d3d3d3 0px 5px 7px 3px;
+          box-shadow: #d3d3d3 0px 5px 7px 3px;
+  -webkit-transition: -webkit-box-shadow 0.5s;
+  transition: -webkit-box-shadow 0.5s;
   transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s, -webkit-box-shadow 0.5s;
 }
+
 .btn-rose:hover {
   cursor: pointer;
-  box-shadow: #a0a0a0 0px 5px 7px 3px;
+  -webkit-box-shadow: #a0a0a0 0px 5px 7px 3px;
+          box-shadow: #a0a0a0 0px 5px 7px 3px;
 }
+
 .btn-rose:hover::after {
   opacity: 0.2;
 }
+
 .btn-rose::after {
   content: "";
   position: absolute;
@@ -68,8 +78,10 @@ p {
   border-radius: inherit;
   opacity: 0;
   background-color: white;
+  -webkit-transition: opacity 1s;
   transition: opacity 1s;
 }
+
 @media screen and (max-width: 500px) {
   .btn-rose {
     font-size: 1em;
@@ -86,21 +98,29 @@ p {
   font-weight: bold;
   padding: 1.5em;
   margin: 1em;
-  border-radius: 5%/30%;
+  border-radius: 5% / 30%;
   border: none;
   background-color: #f6f6f6;
   outline: none;
-  box-shadow: #d3d3d3 0px 5px 7px 3px;
+  -webkit-box-shadow: #d3d3d3 0px 5px 7px 3px;
+          box-shadow: #d3d3d3 0px 5px 7px 3px;
   position: relative;
+  -webkit-transition: -webkit-box-shadow 0.5s;
+  transition: -webkit-box-shadow 0.5s;
   transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s, -webkit-box-shadow 0.5s;
 }
+
 .btn:hover {
   cursor: pointer;
-  box-shadow: #a0a0a0 0px 5px 7px 3px;
+  -webkit-box-shadow: #a0a0a0 0px 5px 7px 3px;
+          box-shadow: #a0a0a0 0px 5px 7px 3px;
 }
+
 .btn:hover::after {
   opacity: 0.2;
 }
+
 .btn::after {
   content: "";
   position: absolute;
@@ -111,19 +131,23 @@ p {
   border-radius: inherit;
   opacity: 0;
   background-color: #9356dc;
+  -webkit-transition: opacity 1s;
   transition: opacity 1s;
 }
+
 @media screen and (max-width: 768px) {
   .btn {
     font-size: 1.2em;
   }
 }
+
 @media screen and (max-width: 500px) {
   .btn {
     width: 270px;
     font-size: 1em;
   }
 }
+
 .btn__list {
   position: absolute;
   left: -20px;
@@ -134,11 +158,13 @@ p {
   background-color: #9356dc;
   color: white;
 }
+
 .btn i {
   padding-left: 0.5em;
   padding-right: 1em;
   color: gray;
 }
+
 @media screen and (max-width: 500px) {
   .btn i {
     font-size: 1em;
@@ -153,42 +179,57 @@ p {
   margin: 1em;
   text-align: left;
   font-weight: bold;
-  border-radius: 5%/30%;
+  border-radius: 5% / 30%;
   border: none;
   background-color: #f6f6f6;
-  box-shadow: #d3d3d3 0px 5px 7px 3px;
+  -webkit-box-shadow: #d3d3d3 0px 5px 7px 3px;
+          box-shadow: #d3d3d3 0px 5px 7px 3px;
 }
+
 @media screen and (max-width: 500px) {
   .btn-menu {
     padding: 1em;
   }
 }
+
 .btn-menu__plat {
   font-size: 2em;
   margin-bottom: 0.2em;
 }
+
 @media screen and (max-width: 500px) {
   .btn-menu__plat {
     font-size: 1.1em;
   }
 }
+
 .btn-menu__sous-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
+
 .btn-menu__detail {
   font-size: 1.5em;
   font-weight: normal;
 }
+
 @media screen and (max-width: 500px) {
   .btn-menu__detail {
     font-size: 1em;
   }
 }
+
 .btn-menu__prix {
   font-size: 1.5em;
 }
+
 @media screen and (max-width: 500px) {
   .btn-menu__prix {
     font-size: 1em;
@@ -202,16 +243,19 @@ p {
   background: none;
   outline: none;
 }
+
 .btn-coeur .coeur {
   fill: transparent;
   stroke-width: 10px;
   stroke: black;
 }
+
 .btn-coeur .coeur:hover {
   fill: url(#grad);
   stroke: url(#grad);
   cursor: pointer;
 }
+
 @media screen and (max-width: 768px) {
   .btn-coeur {
     width: 15px;
@@ -229,11 +273,13 @@ p {
   left: 2%;
   top: 40%;
 }
+
 @media screen and (max-width: 768px) {
   .btn-retour {
     font-size: 1.5em;
   }
 }
+
 @media screen and (max-width: 500px) {
   .btn-retour {
     font-size: 1em;
@@ -250,38 +296,66 @@ p {
   position: absolute;
   top: calc(50% - 150px);
   left: calc(50% - 150px);
-  animation: loader 1s linear;
-  animation-iteration-count: 4;
+  -webkit-animation: loader 1s linear;
+          animation: loader 1s linear;
+  -webkit-animation-iteration-count: 4;
+          animation-iteration-count: 4;
+}
+
+@-webkit-keyframes contenu {
+  0% {
+    -webkit-transform: translateX(-9999px);
+            transform: translateX(-9999px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 @keyframes contenu {
   0% {
-    transform: translateX(-9999px);
+    -webkit-transform: translateX(-9999px);
+            transform: translateX(-9999px);
   }
   100% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
+
+@-webkit-keyframes loader {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 @keyframes loader {
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
+
 .header {
   text-align: center;
   position: relative;
   padding: 4em 0 4em 1em;
 }
+
 @media screen and (max-width: 768px) {
   .header {
     padding: 1em;
   }
 }
+
 @media screen and (max-width: 768px) {
   .header__heading {
     font-size: 4em;
   }
 }
+
 @media screen and (max-width: 500px) {
   .header__heading {
     font-size: 2em;
@@ -295,34 +369,41 @@ p {
   padding: 4em 0 4em 1em;
   line-height: 3em;
 }
+
 @media screen and (max-width: 768px) {
   .footer {
     text-align: left;
   }
 }
+
 .footer__heading {
   font-family: "Shrikhand", sans-serif;
   font-size: 3em;
 }
+
 @media screen and (max-width: 768px) {
   .footer__heading {
     font-size: 2em;
     padding-left: 3vw;
   }
 }
+
 .footer li {
   font-size: 2em;
 }
+
 @media screen and (max-width: 768px) {
   .footer li {
     font-size: 1.2em;
     padding-left: 3vw;
   }
 }
+
 .footer i {
   margin-right: 0.5em;
   font-size: 1.2em;
 }
+
 .footer a {
   color: white;
 }
@@ -333,24 +414,31 @@ p {
   margin: auto;
   background: white;
 }
+
 .content--anim {
-  animation: contenu 1s 2s;
-  animation-fill-mode: backwards;
+  -webkit-animation: contenu 1s 2s;
+          animation: contenu 1s 2s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
   position: relative;
 }
+
 @media screen and (max-width: 1440px) {
   .content {
     max-width: 1140px;
   }
 }
+
 @media screen and (max-width: 768px) {
   .content {
     max-width: 720px;
   }
 }
+
 .banner__image {
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .menu {
@@ -362,15 +450,22 @@ p {
   padding-top: 2em;
   padding-left: 2em;
 }
+
 .menu__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 1em;
 }
+
 .menu__heading .btn-coeur {
   margin-right: 3em;
   font-size: 1.5em;
 }
+
 @media screen and (max-width: 500px) {
   .menu__heading .btn-coeur {
     font-size: 1em;
@@ -381,11 +476,13 @@ p {
   font-size: 3em;
   font-family: "Shrikhand", cursive;
 }
+
 @media screen and (max-width: 768px) {
   .menu-nom {
     font-size: 1.8em;
   }
 }
+
 @media screen and (max-width: 500px) {
   .menu-nom {
     font-size: 1.2em;
@@ -396,22 +493,26 @@ p {
   font-weight: normal;
   text-transform: uppercase;
 }
+
 @media screen and (max-width: 500px) {
   .menu-etape__heading {
     font-size: 1em;
   }
 }
+
 .menu-etape__heading::after {
   content: "";
   display: block;
   width: 5%;
   border-top: solid 4px #99e2d0;
 }
+
 @media screen and (max-width: 768px) {
   .menu-etape__heading::after {
     width: 8%;
   }
 }
+
 @media screen and (max-width: 500px) {
   .menu-etape__heading::after {
     width: 10%;
@@ -422,38 +523,70 @@ p {
   background-color: #f6f6f6;
   text-align: center;
 }
+
 .localisation__ville {
   background-color: #d9d9d9;
   padding: 1.5em;
 }
+
 @media screen and (max-width: 768px) {
   .localisation__ville {
     padding: 1em;
   }
 }
+
 .localisation i {
   margin-right: 1em;
 }
+
 @media screen and (max-width: 768px) {
   .localisation i {
     font-size: 1em;
   }
 }
+
 .localisation input {
   border: none;
   background: none;
   font-size: 1.5em;
   width: 250px;
 }
+
 @media screen and (max-width: 768px) {
   .localisation input {
     font-size: 1em;
     width: 150px;
   }
 }
+
+.localisation input::-webkit-input-placeholder {
+  color: black;
+}
+
+.localisation input:-ms-input-placeholder {
+  color: black;
+}
+
+.localisation input::-ms-input-placeholder {
+  color: black;
+}
+
 .localisation input::placeholder {
   color: black;
 }
+
+.localisation input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.localisation input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.localisation input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
 .localisation input:focus::placeholder {
   color: transparent;
 }
@@ -461,36 +594,43 @@ p {
 .explorer {
   padding: 5em 0;
 }
+
 @media screen and (max-width: 768px) {
   .explorer {
     padding: 3em 0;
   }
 }
+
 .explorer__heading {
   padding-bottom: 0.3em;
 }
+
 @media screen and (max-width: 768px) {
   .explorer__heading {
     font-size: 2em;
   }
 }
+
 @media screen and (max-width: 500px) {
   .explorer__heading {
     font-size: 1.2em;
     padding-bottom: 1em;
   }
 }
+
 .explorer p {
   font-size: 2em;
   line-height: 1.8em;
   padding-bottom: 2em;
 }
+
 @media screen and (max-width: 768px) {
   .explorer p {
     font-size: 1.5em;
     line-height: 1.2em;
   }
 }
+
 @media screen and (max-width: 500px) {
   .explorer p {
     font-size: 1em;
@@ -500,6 +640,7 @@ p {
 .fonction {
   padding: 4em 0 4em 1em;
 }
+
 @media screen and (max-width: 768px) {
   .fonction__heading {
     font-size: 2em;
@@ -507,18 +648,27 @@ p {
 }
 
 .lst-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .restaurant {
   background-color: #f6f6f6;
   padding: 4em 0 4em 1em;
 }
+
 .restaurant__heading {
   padding-bottom: 1em;
 }
+
 @media screen and (max-width: 768px) {
   .restaurant__heading {
     font-size: 2em;
@@ -527,9 +677,13 @@ p {
 }
 
 .lst-carte {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .carte {
@@ -538,42 +692,52 @@ p {
   background-color: white;
   margin: 1em;
   border-radius: 10%;
-  box-shadow: #d3d3d3 0px 5px 7px 3px;
+  -webkit-box-shadow: #d3d3d3 0px 5px 7px 3px;
+          box-shadow: #d3d3d3 0px 5px 7px 3px;
   position: relative;
 }
+
 @media screen and (max-width: 1080px) {
   .carte {
     width: 400px;
   }
 }
+
 @media screen and (max-width: 500px) {
   .carte {
     width: 300px;
   }
 }
+
 .carte__nom {
   padding: 1em;
 }
+
 @media screen and (max-width: 500px) {
   .carte__nom h3 {
     font-size: 1.2em;
   }
 }
+
 @media screen and (max-width: 500px) {
   .carte__nom p {
     font-size: 1em;
   }
 }
+
 .carte img {
   width: 100%;
   height: 250px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
+
 @media screen and (max-width: 500px) {
   .carte img {
     height: auto;
   }
 }
+
 .carte .btn-coeur {
   position: absolute;
   bottom: 10%;
@@ -592,9 +756,12 @@ p {
 }
 
 .btn-commander {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 2em;
 }
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */
