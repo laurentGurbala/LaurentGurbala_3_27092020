@@ -54,10 +54,17 @@
         background-color: $couleur-primaire;
         color: white;
     }
+    &:hover{
+        & i{
+            color: $couleur-primaire;
+        }
+    }
     & i{
         padding-left: 0.5em;
         padding-right: 1em;
         color: gray;
+        transition: color 0.2s;
+        transition-delay: 0.2s;
         @include mobile {
             font-size: 1em;
             text-align: left;
@@ -131,14 +138,6 @@
         height: 15px;
     }
 }
-
-// .coeur {
-//     width: 15px;
-//     height: 15px;
-//     fill: transparent;
-//     stroke-width: 4px;
-//     stroke: black;
-// }
 
 .btn-retour {
     margin-left: 1em;
