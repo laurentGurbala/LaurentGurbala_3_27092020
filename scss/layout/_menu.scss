@@ -1,7 +1,7 @@
 .menu {
     background-color: white;
     position: relative;
-    top: -130px;
+    top: -50px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     padding-top: 2em;
@@ -20,6 +20,19 @@
             }
         }
     }
+}
+
+// Animation des menus
+.menu-etape-1{
+    animation: menu 2s both;
+}
+.menu-etape-2{
+    animation: menu 2s both;
+    animation-delay: 2s;
+}
+.menu-etape-3{
+    animation: menu 2s both;
+    animation-delay: 3s;
 }
 
 .menu-nom {

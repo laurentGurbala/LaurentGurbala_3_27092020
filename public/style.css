@@ -1,3 +1,13 @@
+@keyframes menu {
+  0% {
+    transform: translateY(30%);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 100%;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -365,7 +375,7 @@ p {
 .menu {
   background-color: white;
   position: relative;
-  top: -130px;
+  top: -50px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   padding-top: 2em;
@@ -384,6 +394,20 @@ p {
   .menu__heading .btn-coeur {
     font-size: 1em;
   }
+}
+
+.menu-etape-1 {
+  animation: menu 2s both;
+}
+
+.menu-etape-2 {
+  animation: menu 2s both;
+  animation-delay: 2s;
+}
+
+.menu-etape-3 {
+  animation: menu 2s both;
+  animation-delay: 3s;
 }
 
 .menu-nom {
