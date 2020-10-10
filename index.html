@@ -3,206 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- icons -->
-    <script src="https://kit.fontawesome.com/9640580a8c.js" crossorigin="anonymous"></script>
+    <!-- Icons FontAwesome -->
+    <link href="public/font-awesome/css/all.css" rel="stylesheet">
+    
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap" rel="stylesheet">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="public/style.css">
-    <title>Oh my food</title>
+    
+    <title>ohmyfood</title>
 </head>
 <body>
-    <!-- Définition du dégradé du SVG Coeur -->
-    <svg class="defs">
-        <defs>
-            <linearGradient id="grad" x1="0" y1="100%" x2="0" y2="0">
-                <stop offset="0%" stop-color="violet" />
-                <stop offset="50%" stop-color="blueviolet" />
-            </linearGradient>
-        </defs>
-    
-    </svg>
-    <!-- Loader -->
-    <div class="loader"></div>
-    <!-- CONTENT -->
-    <div class="content content--anim">
-        <!-- HEADER -->
+    <!-- Loader Spinner -->
+    <div class="loader-spinner">
+        <div class="loader"></div>
+    </div>
+    <!-- Contenu Principal -->
+    <div class="content">
+
+        <!-- Header -->
         <header class="header">
-            <h1 class="header__heading">ohmyfood</h1>
-        </header>  
+            <h1 class="header__heading">
+                ohmyfood 
+            </h1>
+        </header>
         
-        <!-- LOCALISATION -->
-        <section class="localisation">
-            <!-- Recherche de ville -->
-            <div class="localisation__ville">
-                <i class="fas fa-map-marker-alt"></i>
-                <input name="ville" type="search" placeholder="Paris, Belleville">
-            </div>
-
-            <!-- Recherche de restaurant -->
-            <div class="explorer">
-                <h2 class="explorer__heading">Réservez le menu qui <br> vous convient</h2>
-                <p>
-                    Découvrez des restaurants d'exception, <br> 
-                    sélectionnés par nos soins.
-                </p>
-                <button class="btn-rose">Explorer nos restaurants</button>
+        <!-- Ville -->
+        <div class="localisation">
+            <i class="fas fa-map-marker-alt"></i>
+            <input class="localisation__input" type="search" name="ville" id="ville" placeholder="Paris, Belleville">
+        </div>
+        
+        <!-- Explorer -->
+        <section class="explorer">
+            <h2 class="explorer__heading">
+                Réservez le menu qui <br>
+                vous convient
+            </h2>
+            <p>
+                Découvrez des restaurants d'exception, <br>
+                sélectionnés par nos soins.
+            </p>
+            <div class="btn btn--secondaire">
+                Explorer nos restaurants
             </div>
         </section>
-        
-        <!-- FONCTIONNEMENT -->
-        <section class="fonction">
-            <h2 class="fonction__heading">Fonctionnement</h2>
-            <div class="lst-btn">
+
+        <!-- Fonctionnement -->
+        <section class="fonctionnement">
+            <h2 class="fonctionnement__heading">
+                Fonctionnement
+            </h2>
+            <div class="fonctionnement__choix">
                 <!-- Bouton 1 -->
-                <button class="btn">
-                    <i class="fas fa-mobile-alt"></i> Choisissez un restaurant
-                    <span class="btn__list">1</span>
-                </button>
+                <div class="btn btn--choix"> 
+                    <span class="btn--nombre">1</span>
+                    <i class="fas fa-mobile-alt"></i>
+                    Choisissez un restaurant
+                </div>
                 <!-- Bouton 2 -->
-                <button class="btn">
-                    <i class="fas fa-list-ul"></i> Composez votre menu
-                    <span class="btn__list">2</span>
-                </button>
+                <div class="btn btn--choix"> 
+                    <span class="btn--nombre">2</span>
+                    <i class="fas fa-list-ul"></i>
+                    Composez votre menu
+                </div>
                 <!-- Bouton 3 -->
-                <button class="btn">
-                    <i class="fas fa-store"></i> Dégustez au restaurant
-                    <span class="btn__list">3</span>
-                </button>
+                <div class="btn btn--choix"> 
+                    <span class="btn--nombre">3</span>
+                    <i class="fas fa-store"></i>
+                    Dégustez au restaurant
+                </div>
             </div>
-
         </section>
-        <!-- RESTAURANT -->
-        <section class="restaurant">
-            <h2 class="restaurant__heading">Restaurants</h2>
-            <div class="lst-carte">
 
-                <!-- Carte 1 -->
+        <!-- Restaurants -->
+        <section class="restaurant">
+            <h2 class="restaurant__heading">
+                Restaurants
+            </h2>
+
+            <!-- Liste Carte -->
+            <div class="liste-carte">
+                <!-- Carte 1 - La palette du gout -->
                 <div class="carte">
-                    <a class="carte__lien" href="Page/La-palette-du-gout.html">
-                        <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.png" alt="La palette du goût">
-                        <!-- Flag Nouveau -->
-                        <div class="nouveau">
-                            Nouveau
-                        </div>
-        
-                        <div class="carte__nom">
-                            <h3>La palette du goût</h3>
-                            <p>Ménilmontant</p>
+                    <a href="la-palette-du-gout.html">
+                        <img src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.png" alt="La palette du goût">
+                        <div class="nouveau">Nouveau</div>
+                        <div class="carte__heading">
+                            <h3 class="carte__heading__nom">
+                                La palette du goût
+                            </h3>
+                            <p class="carte__heading__lieu">
+                                Ménilmontant
+                            </p>
                         </div>
                     </a>
-                    <button class="btn-coeur">
-                        <svg class="coeur" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="-4 0 542 542" xml:space="preserve">
-
+                    <div class="btn-coeur">
+                        <svg class="coeur" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-4 0 542 542" xml:space="preserve">
+                            <linearGradient id="grad" x1="0" y1="100%" x2="0" y2="0">
+                                <stop offset="0%" stop-color="violet"></stop>
+                                <stop offset="50%" stop-color="blueviolet"></stop>
+                            </linearGradient>
                             <g>
                                 <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
                                     c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
                                     c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
                                     s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
-                                    C512,93.417,453.532,30,376,30z"/>
+                                    C512,93.417,453.532,30,376,30z"></path>
                             </g>
 
                         </svg>
-                    </button>
+                    </div>
+                    
                 </div>
-    
                 <!-- Carte 2 -->
                 <div class="carte">
-                    <a href="Page/La-note-enchantee.html">
-                        <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.png" alt="La note enchantée">
-                        <!-- Flag Nouveau -->
-                        <div class="nouveau">
-                            Nouveau
-                        </div>
-        
-                        <div class="carte__nom">
-                            <h3>La note enchantée</h3>
-                            <p>Charonne</p>
+                    <a href="la-note-enchantee.html">
+                        <img src="public/images/restaurants/stil-u2Lp8tXIcjw-unsplash.png" alt="La note enchantée">
+                        <div class="nouveau">Nouveau</div>
+                        <div class="carte__heading">
+                            <h3 class="carte__heading__nom">
+                                La note enchantée
+                            </h3>
+                            <p class="carte__heading__lieu">
+                                Charonne
+                            </p>
                         </div>
                     </a>
-                    <button class="btn-coeur">
-                        <svg class="coeur" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="-4 0 542 542" xml:space="preserve">
-
+                    <div class="btn-coeur">
+                        <svg class="coeur" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-4 0 542 542" xml:space="preserve">
+                            <linearGradient id="grad" x1="0" y1="100%" x2="0" y2="0">
+                                <stop offset="0%" stop-color="violet"></stop>
+                                <stop offset="50%" stop-color="blueviolet"></stop>
+                            </linearGradient>
                             <g>
                                 <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
                                     c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
                                     c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
                                     s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
-                                    C512,93.417,453.532,30,376,30z"/>
+                                    C512,93.417,453.532,30,376,30z"></path>
                             </g>
 
                         </svg>
-                    </button>
+                    </div>
+                    
                 </div>
-    
                 <!-- Carte 3 -->
                 <div class="carte">
-                    <a href="Page/a-la-francaise.html">
-                        <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.png" alt="A la francaise">
-                        
-        
-                        <div class="carte__nom">
-                            <h3>À la française</h3>
-                            <p>Cité Rouge</p>
+                    <a href="a-la-francaise.html">
+                        <img src="public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.png" alt="À la française">
+                        <div class="carte__heading">
+                            <h3 class="carte__heading__nom">
+                                À la française
+                            </h3>
+                            <p class="carte__heading__lieu">
+                                Cité Rouge
+                            </p>
                         </div>
                     </a>
-                    <button class="btn-coeur">
-                        <svg class="coeur" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="-4 0 542 542" xml:space="preserve">
-
+                    <div class="btn-coeur">
+                        <svg class="coeur" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-4 0 542 542" xml:space="preserve">
+                            <linearGradient id="grad" x1="0" y1="100%" x2="0" y2="0">
+                                <stop offset="0%" stop-color="violet"></stop>
+                                <stop offset="50%" stop-color="blueviolet"></stop>
+                            </linearGradient>
                             <g>
                                 <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
                                     c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
                                     c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
                                     s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
-                                    C512,93.417,453.532,30,376,30z"/>
+                                    C512,93.417,453.532,30,376,30z"></path>
                             </g>
 
                         </svg>
-                    </button>
+                    </div>
                 </div>
-    
                 <!-- Carte 4 -->
                 <div class="carte">
-                    <a href="Page/Le-delice-des-sens.html">
-                        <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.png" alt="Le delice des sens">
-        
-                        <div class="carte__nom">
-                            <h3>Le délice des sens</h3>
-                            <p>Folie-Méricourt</p>
+                    <a href="le-delice-des-sens.html">
+                        <img src="public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.png" 
+                        alt="Le délice des sens">
+                        <div class="carte__heading">
+                            <h3 class="carte__heading__nom">
+                                Le délice des sens
+                            </h3>
+                            <p class="carte__heading__lieu">
+                                Folie-Méricourt
+                            </p>
                         </div>
                     </a>
-                    <button class="btn-coeur">
-                        <svg class="coeur" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="-4 0 542 542" xml:space="preserve">
-
+                    <div class="btn-coeur">
+                        <svg class="coeur" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-4 0 542 542" xml:space="preserve">
+                            <linearGradient id="grad" x1="0" y1="100%" x2="0" y2="0">
+                                <stop offset="0%" stop-color="violet"></stop>
+                                <stop offset="50%" stop-color="blueviolet"></stop>
+                            </linearGradient>
                             <g>
                                 <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
                                     c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
                                     c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
                                     s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
-                                    C512,93.417,453.532,30,376,30z"/>
+                                    C512,93.417,453.532,30,376,30z"></path>
                             </g>
 
                         </svg>
-                    </button>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- FOOTER -->
+
+        <!-- Footer -->
         <footer class="footer">
-            <h2 class="footer__heading">ohmyfood</h2>
+            <h2 class="footer__heading">
+                ohmyfood
+            </h2>
             <ul>
-                <li><i class="fas fa-utensils"></i> Proposer un restaurant</li>
-                <li><i class="fas fa-handshake"></i> Devenir partenaire</li>
-                <li>Mentions légales</li>
-                <li> <a href="mailto:contact@ohmyfood.com">Contact</a> </li>
+                <li>
+                    <i class="fas fa-utensils"></i> Proposer un restaurant
+                </li>
+                <li>
+                    <i class="fas fa-hands-helping"></i> Devenir partenaire
+                </li>
+                <li>Mention légales</li>
+                <li class="footer__contact">
+                    <a href="mailto:contact@ohmyfood.com"> Contact</a>
+                </li>
             </ul>
         </footer>
     </div>
-
 </body>
 </html>

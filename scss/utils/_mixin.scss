@@ -1,0 +1,132 @@
+// Media Queries
+@mixin mobile {
+    @media screen and (max-width: map-get($breakpoints, mobile)){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: map-get($breakpoints, laptop)) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (max-width: map-get($breakpoints, desktop)){
+        @content;
+    }
+}
+
+// Marge d'une section page index
+@mixin padding-accueil {
+    padding: 4rem 3rem;
+    @include mobile {
+        padding: 2rem 1rem;
+    }
+}
+
+// Titre section page index
+@mixin heading-section {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    @include mobile(){
+        font-size: 1.5rem;
+    }
+}
+
+// Titre Menu (entrées, plats, desserts)
+@mixin heading-menu {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 2rem;
+    margin: 2rem 0;
+    // Media Query
+    @include mobile {
+        font-size: 1rem;
+    }
+    // souligne la moitié du mot
+    &::after{
+        content:"";
+        display: block;
+        width: 5%;
+        border-top: solid 4px $couleur-tertiaire;
+        // Media Query
+        @include tablet {
+            width: 8%;
+        }
+        @include mobile(){
+            width: 10%;
+        }
+    }
+}
+// Shadow d'un élément
+@mixin elt-shadow($color: $couleur-shadow) {
+    box-shadow:$color 0px 5px 7px 3px;
+}
+
+// Bouton basique (hors anim/transition)
+@mixin btn-classique ($couleur: #f6f6f6){
+    width: 80%;
+    max-width: 500px;
+    margin: 1rem auto;
+    background: $couleur;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    border-radius: 5% / 30%;
+    font-size: 1.5rem;
+    @include elt-shadow();
+    cursor: pointer;
+    outline: none;
+    border: none;
+    position: relative;
+    // Media Query
+    @include mobile {
+        width: 90%;
+        font-size: 1rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+// Survol des boutons
+@mixin hover-btn($couleur: $couleur-primaire, $shadow: $couleur-shadow) {
+    transition: all 0.5s;
+
+    &:hover{
+        box-shadow: darken($shadow, $amount: 20%) 0px 5px 7px 3px;
+        &::after {
+            opacity: 0.2;
+        }
+        & i{
+            color: $couleur;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $couleur;
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+}
+
+// Remplace le texte par des petits points
+@mixin texte-ellipse {
+    white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}

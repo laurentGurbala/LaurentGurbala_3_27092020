@@ -1,13 +1,9 @@
-// Variables
-
 $couleur-primaire: #9356dc;
 $couleur-secondaire: #ff79da;
 $couleur-tertiaire: #99e2d0;
 
 $couleur-bg: #f6f6f6; 
 $couleur-shadow: #d3d3d3;
-
-$contenu-delay: 2s;
 
 // Listes - Maps
 $breakpoints: (
@@ -17,115 +13,3 @@ $breakpoints: (
     laptop: 1080px,
     desktop: 1440px
 );
-
-// Mixins
-
-// MEDIA QUERIES
-
-@mixin mobile {
-    @media screen and (max-width: map-get($breakpoints, mobile)){
-        @content;
-    }
-}
-
-@mixin tablet {
-    @media screen and (max-width: map-get($breakpoints, tablet)) {
-        @content;
-    }
-}
-
-@mixin laptop {
-    @media screen and (max-width: map-get($breakpoints, laptop)) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media screen and (max-width: map-get($breakpoints, desktop)){
-        @content;
-    }
-}
-
-// AUTRES
-@mixin section-padding {
-    padding: 4em 0 4em 1em;
-}
-
-@mixin btn-shadow {
-    box-shadow:$couleur-shadow 0px 5px 7px 3px;
-}
-
-@mixin transition-btn($couleur: $couleur-primaire){
-    transition: all 0.5s;
-
-    &:hover{
-        cursor: pointer;
-        box-shadow: darken($color: $couleur-shadow, $amount: 20%) 0px 5px 7px 3px;
-        &::after {
-            opacity: 0.2;
-        }
-    }
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom:0;
-        border-radius: inherit;
-        opacity: 0;
-        background-color: $couleur;
-        transition: opacity 1s;
-    }
-}
-// Règles du nom du restaurant 
-// sur la page détails du menu
-@mixin nom-restaurant-menu {
-    font-size: 3em;
-    font-family: "Shrikhand", cursive;
-
-    @include tablet(){
-        font-size: 1.8em;
-    }
-    @include mobile(){
-        font-size: 1.2em;
-    }
-}
-
-// Titre Différentes étapes du menu
-// Entrée / Plats / Desserts
-@mixin title-menu {
-    font-weight: normal;
-    text-transform: uppercase;
-
-    @include mobile(){
-        font-size: 1em;
-    }
-
-    &::after{
-        content: "";
-        display: block;
-        width: 5%;
-        border-top: solid 4px $couleur-tertiaire;
-
-        @include tablet(){
-            width: 8%;
-        }
-        @include mobile(){
-            width: 10%;
-        }
-    }
-}
-
-// ANIMATION
-@keyframes menu {
-    0% {
-        transform: translateY(30%);
-        opacity: 0%;
-    }
-
-    100%{
-        transform: translateY(0%);
-        opacity: 100%;
-    }
-}

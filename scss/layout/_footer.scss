@@ -1,37 +1,42 @@
 .footer {
     background: #353535;
     color: white;
-    text-align: center;
-    @include section-padding();
-    line-height: 3em;
-    
-    @include tablet(){
+    @include padding-accueil;
+    // Media Query
+    @include mobile {
         text-align: left;
     }
-
     &__heading {
-        font-family: "Shrikhand", sans-serif;
-        font-size: 3em;
-        @include tablet(){
-            font-size: 2em;
-            padding-left: 3vw;
+        font-family: "Shrikhand", cursive;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        // Media Query
+        @include mobile {
+            font-size: 1.5rem;
         }
     }
-
+    // Liste 
     & li {
-        font-size: 2em;
-        @include tablet(){
-            font-size: 1.2em;
-            padding-left: 3vw;
+        margin: 1rem 0;
+        font-size: 1.5rem;
+        // Media Query
+        @include mobile {
+            font-size: 0.8rem;
         }
     }
-
+    // Icon du footer
     & i {
-
-        margin-right: 0.5em;
-        font-size: 1.2em;
+        margin-right: 1rem;
+        // Media Query
+        @include mobile {
+            margin-right: 0.5rem;
+        }
     }
-    & a {
-        color: white;
+    // UI Contact
+    &__contact{
+        &:hover {
+            color: $couleur-primaire;
+            font-weight: bold;
+        }
     }
 }

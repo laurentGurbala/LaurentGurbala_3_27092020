@@ -1,23 +1,10 @@
 .content {
-    width: 100%;
+    width: 90%;
     max-width: 1500px;
     margin: auto;
-    background: white;
-    &--anim{
+    text-align: center;
 
-        animation: contenu 01s $contenu-delay;
-        animation-fill-mode: backwards;
-        position: relative;
+    @include tablet {
+        width: 100%;
     }
-    @include desktop(){
-        max-width: 1140px;
-    }
-    @include tablet(){
-        max-width: 720px;
-    }
-
-    @include mobile(){
-        // width: 90%;
-    }
-
 }

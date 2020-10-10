@@ -1,23 +1,20 @@
 // utils
 @import "./utils/variables";
+@import "./utils/mixin";
+@import "./utils/animation";
 
 // base
 @import "./base/base";
-@import "./base/typographie";
 
-// composant
+// components
 @import "./components/bouton";
 @import "./components/loader";
-@import "./components/svg";
 
 // layout
+@import "./layout/content";
 @import "./layout/header";
 @import "./layout/footer";
-@import "./layout/content";
-@import "./layout/banner";
-@import "./layout/menu";
 
 // page
-@import "./pages/acceuil";
-@import "./pages/a-la-francaise";
-
+@import "./pages/accueil";
+@import "./pages/restaurant";

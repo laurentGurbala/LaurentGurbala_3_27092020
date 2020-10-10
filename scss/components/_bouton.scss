@@ -1,158 +1,148 @@
-.btn-rose {
-    padding: 1em 2em;
-    font-size: 1.5em;
-    color: white;
-    border-radius: 10% / 50%;
-    border: none;
-    background: linear-gradient(to top left, $couleur-primaire, $couleur-secondaire);
-    position: relative;
-    outline: none;
-    @include btn-shadow();
-
-    @include transition-btn(white);
-
-    @include mobile(){
-        font-size: 1em;
-    }
-}
-
+// Bouton classique
 .btn {
-    display: block;
-    width: 80%;
-    max-width: 500px;
-    text-align: left;
-    font-size: 1.5em;
-    font-family: inherit;
-    font-weight: bold;
-    padding: 1.5em;
-    margin: 1em;
-    border-radius: 5% / 30%;
-    border: none;
-    background-color: #f6f6f6;
-    outline: none;
-    @include btn-shadow();
-    position: relative;
-    // Transition
-    @include transition-btn;
-    // Fin transition
-    @include tablet(){
-        font-size: 1.2em;
-    }
-
-    @include mobile(){
-        width: 270px;
-        font-size: 1em;
-    }
-
-    &__list {
-        position: absolute;
-        left: -20px;
-        padding: 0.5em;
-        border-radius: 50%;
-        line-height: 0.7em;
+    @include btn-classique();
+    @include hover-btn();
+ 
+    //  Bouton avec un dégradé (couleur secondaire)
+    &--secondaire{
+        color: white;
+        max-width: 350px;
+        border-radius: 10% / 50%;
+        background: linear-gradient(to top left, $couleur-primaire, $couleur-secondaire);
         font-weight: normal;
+        @include hover-btn(white);
+        @include mobile {
+            max-width: 250px;
+        }
+    }
+
+    // Bouton de l'index.html
+    &--choix {
+        text-align: left;
+        & i {
+            padding: 0 1.5rem;
+            color: gray;
+            transition: color 0.2s;
+            transition-delay: 0.2s;
+            @include mobile {
+                padding: 0 1rem 0 0;
+            }
+        }
+    }
+
+    // Numéro ordre action bouton
+    &--nombre {
+        position: absolute;
+        left: -1rem;
+        padding: 0.5rem;
+        line-height: 1rem;
+        border-radius: 50%;
         background-color: $couleur-primaire;
         color: white;
-    }
-    &:hover{
-        & i{
-            color: $couleur-primaire;
-        }
-    }
-    & i{
-        padding-left: 0.5em;
-        padding-right: 1em;
-        color: gray;
-        transition: color 0.2s;
-        transition-delay: 0.2s;
-        @include mobile {
-            font-size: 1em;
-            text-align: left;
-        }
-    }
-}
-
-.btn-menu {
-    width: 90%;
-    max-width: 500px;
-    padding: 2em;
-    margin: 1em;
-    text-align: left;
-    font-weight: bold;
-    border-radius: 5% / 30%;
-    border: none;
-    background-color: #f6f6f6;
-    @include btn-shadow;
-
-    @include mobile{
-        padding: 1em;
-    }
-    &__plat{
-        font-size: 2em;
-        margin-bottom: 0.2em;
-        @include mobile{
-            font-size: 1.1em;
-        }
-    }
-    &__sous-detail{
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-    }
-    
-    &__detail {
-        font-size: 1.5em;
         font-weight: normal;
-        @include mobile{
-            font-size: 1em;
-        }
-    }
-
-    &__prix {
-        font-size: 1.5em;
-        @include mobile{
-            font-size: 1em;
+        @include mobile {
+            line-height: 0.7rem;
+            font-size: 0.8rem;
+            top: 1.2rem;
         }
     }
 }
 
+// Bouton spécial (coeur)
 .btn-coeur {
     width: 30px;
     height: 30px;
     border: none;
     background: none;
     outline: none;
-    & .coeur{
-        fill: transparent;
-        stroke-width: 10px;
-        stroke: black;
-        &:hover{
-            fill: url(#grad);
-            stroke: url(#grad);
-            cursor: pointer;
-        }
-    }
-
-    @include tablet{
+    cursor: pointer;
+    @include mobile {
         width: 15px;
         height: 15px;
     }
+    & .coeur {
+        fill: transparent;
+        stroke-width: 10px;
+        stroke: black;
+        &:hover {
+            fill: url(#grad);
+            stroke: url(#grad);
+        }
+    }
 }
 
+// Bouton retour
 .btn-retour {
-    margin-left: 1em;
-    font-size: 2em;
-    color: black;
+    position: absolute;
+    left: 5%;
+    top: 40%;
+    font-size: 2rem;
     background: none;
     border: none;
-    position: absolute;
-    left: 2%;
-    top: 40%; 
     @include tablet {
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
     @include mobile {
         font-size: 1em;
-        top: 35%;
+    }
+}
+
+// Bouton pages menu
+.btn-menu {
+    @include btn-classique(white);
+    @include elt-shadow;
+    overflow: hidden;
+    text-align: left;
+    &__nom {
+        font-weight: bold;
+        @include texte-ellipse;
+    }
+    &__info{
+        font-size: 0.8em;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__detail {
+        @include texte-ellipse;
+    }
+    &__prix {
+        font-weight: bold;
+    }
+    &__size {
+        width: 100%;
+        transition: width 0.2s;
+    }
+    // Transition sur le survol
+    &:hover {
+        & .btn-menu__size {
+            width: 75%;
+        }
+        & .btn-check {
+            transform: translateX(0);
+            & i {
+                transform: rotate(1turn);
+            }
+        }
+    }
+
+}
+
+.btn-check {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 90px;
+    height: 100%;
+    font-size: 2rem;
+    background: $couleur-tertiaire;
+    transform: translateX(90px);
+    transition: transform 0.2s;
+    & i {
+        position: absolute;
+        top: calc(50% - 1rem);
+        right: calc(50% - 1rem);
+        color: white;
+        transform: rotate(0);
+        transition: transform 0.5s;
     }
 }

@@ -1,0 +1,71 @@
+// Banner
+.banner{
+    position: relative;
+    & img {
+        width: 100%;
+        object-fit: cover;
+    }
+    &__heading {
+        @include padding-accueil;
+        // padding-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        position: absolute;
+        bottom : -35px;
+        left: 0;
+        right: 0;
+        background: $couleur-bg;
+        border-top-left-radius: 2.5rem;
+        border-top-right-radius: 2.5rem;
+        // Nom du restaurant
+        &__nom {
+            font-family: "Shrikhand", cursive;
+            font-size: 4rem;
+            @include laptop {
+                font-size: 3rem;
+            }
+            @include tablet {
+                font-size: 2.3rem;
+            }
+            @include mobile {
+                font-size: 1.5rem;
+            }
+        }
+        // Bouton du restaurant (coeur)
+        & .btn-coeur {
+            width: 50px;
+            @include tablet {
+                width: 30px;
+            }
+            @include mobile {
+                width: 20px;
+            }
+        }
+    }
+}
+
+.menu {
+    background: $couleur-bg;
+    @include padding-accueil;
+    padding-top: 0;
+}
+
+.menu-etape {
+    &__heading {
+        @include heading-menu;
+    }
+}
+
+// Animation des menus
+.menu-etape-1 {
+    animation: menu 2s both;
+}
+.menu-etape-2 {
+    animation: menu 2s both;
+    animation-delay: 2s;
+}
+.menu-etape-3 {
+    animation: menu 2s both;
+    animation-delay: 3s; 
+}

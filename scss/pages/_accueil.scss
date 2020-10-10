@@ -1,0 +1,134 @@
+// Input choix de la ville
+.localisation {
+    background: #e6e6e6;
+    font-size: 1.5rem;
+    box-shadow: inset 0px 4px 6px -3px #a8a8a8;
+    // Media Queries
+    @include mobile {
+        font-size: 1rem;
+    }
+    &__input{
+        width: 200px;
+        font-size: 1.5rem;
+        font-family: "Roboto", sans-serif;
+        outline: none;
+        border: none;
+        background: none;
+        margin: 1rem 0 1rem 2rem;
+        @include mobile {
+            font-size: 1rem;
+            width: 150px;
+        }
+        &::placeholder{
+            color: black;
+            font-family: "Roboto", sans-serif;
+            font-size: 1.5rem;
+            @include mobile {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+// Section Explorer (introduction)
+.explorer {
+    @include padding-accueil;
+    background: $couleur-bg;
+    &__heading{
+        font-size: 2.5rem;
+        padding-bottom: 1.5rem;
+        @include mobile {
+            font-size: 1.5rem;
+        }
+    }
+    & p {
+        font-size: 1.5rem;
+        padding-bottom: 2rem;
+        @include mobile {
+            font-size: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+}
+// Section Fonctionnement
+.fonctionnement {
+    @include padding-accueil;
+    &__heading{
+        @include heading-section;
+    }
+}
+// Section Restaurants
+.restaurant {
+    @include padding-accueil;
+    background: $couleur-bg;
+    &__heading {
+        @include heading-section;
+    }
+}
+
+.liste-carte {
+    display: flex; 
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.carte {
+    width: 500px;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10%;
+    @include elt-shadow();
+    margin: 1rem 0.2rem;
+    position: relative;
+    @include laptop {
+        width: 400px;
+    }
+    @include mobile {
+        width: 300px;
+    }
+    // Image de la carte restaurant
+    & img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        @include mobile {
+            height: auto;
+        }
+    }
+    // Description (nom-lieu)
+    &__heading {
+        text-align: left;
+        padding: 1rem;
+        &__nom {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            @include mobile {
+                font-size: 1rem;
+            }
+        }
+        &__lieu {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            @include mobile {
+                font-size: 0.8rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+    // Positon du bouton coeur
+    & .btn-coeur {
+        position: absolute;
+        bottom: 12%;
+        right: 10%;
+    }
+}
+// Flag nouveau sur la carte
+.nouveau {
+    position: absolute;
+    top : 5%;
+    right: 5%;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: $couleur-tertiaire;
+    padding: 0.5rem 1rem;
+    color: darken($color: $couleur-tertiaire, $amount: 35%);
+}

@@ -1,26 +1,11 @@
 .header {
-    text-align: center;
     position: relative;
-    @include section-padding();
-    
-    @include desktop(){
-
-    }
-
-    @include tablet(){
-        padding: 1em;
-    }
-
-    @include mobile(){
-
-    }
-
+    font-family: "Shrikhand", cursive;
     &__heading {
-        @include tablet(){
-            font-size: 4em;
-        }
-        @include mobile(){
-            font-size: 2em;
+        font-size: 5rem;
+        padding: 1rem;
+        @include mobile {
+            font-size: 2rem;
         }
     }
 }
